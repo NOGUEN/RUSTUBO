@@ -23,6 +23,7 @@ class LandingPage extends BaseView<LandingPageController> {
       child: Column(
         children: [
           MainTitleImage(controller: controller),
+          LandingList(controller: controller),
           const SizedBox(
             height: 2000,
           ),
@@ -54,18 +55,21 @@ class MainTitleImage extends StatelessWidget {
             width: double.infinity,
             height: 700,
             child: Flow(
-                delegate: ParallaxFlowDelegate(
-                  scrollable: Scrollable.of(context),
-                  listItemContext: context,
-                  backgroundImageKey: _backgroundImageKey,
-                ),
-                children: [
-                  Image.asset(
-                    'images/main_title.jpg',
+              delegate: ParallaxFlowDelegate(
+                scrollable: Scrollable.of(context),
+                listItemContext: context,
+                backgroundImageKey: _backgroundImageKey,
+              ),
+              children: [
+                SizedBox(
+                  child: Image.asset(
+                    'images/landing_title.jpg',
                     fit: BoxFit.cover,
                     key: _backgroundImageKey,
                   ),
-                ]),
+                ),
+              ],
+            ),
           ),
           Container(
             width: double.infinity,
@@ -95,6 +99,72 @@ class MainTitleImage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class LandingList extends StatelessWidget {
+  LandingList({super.key, required this.controller});
+
+  final GlobalKey _backgroundImageKey = GlobalKey();
+  final LandingPageController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 1500,
+      child: Stack(children: [
+        Flow(
+          delegate: ParallaxFlowDelegate(
+            backgroundImageKey: _backgroundImageKey,
+            scrollable: Scrollable.of(context),
+            listItemContext: context,
+          ),
+          children: [
+            SizedBox(
+              child: Image.asset(
+                'images/landing_background.jpg',
+                fit: BoxFit.cover,
+                key: _backgroundImageKey,
+              ),
+            ),
+          ],
+        ),
+        Container(
+          width: double.infinity,
+          height: 1500,
+          decoration: BoxDecoration(color: AppColors.black.withOpacity(0.8)),
+        ),
+        Column(
+          children: [
+            Container(
+              width: double.infinity,
+              height: 300,
+              color: AppColors.white,
+            ),
+            Container(
+              width: double.infinity,
+              height: 300,
+              color: Colors.transparent,
+            ),
+            Container(
+              width: double.infinity,
+              height: 300,
+              color: AppColors.white,
+            ),
+            Container(
+              width: double.infinity,
+              height: 300,
+              color: Colors.transparent,
+            ),
+            Container(
+              width: double.infinity,
+              height: 300,
+              color: Colors.white,
+            )
+          ],
+        ),
+      ]),
     );
   }
 }
