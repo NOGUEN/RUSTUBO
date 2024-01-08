@@ -67,6 +67,7 @@ abstract class BaseView<Controller extends BaseController>
       bottomNavigationBar: bottomNavigationBar(),
       bottomSheet: bottomSheet(),
       drawer: drawer(),
+      endDrawer: endDrawer(),
     );
   }
 
@@ -125,5 +126,9 @@ abstract class BaseView<Controller extends BaseController>
   //로딩화면
   Widget _showLoading() {
     return const Loading();
+  }
+
+  Widget? endDrawer() {
+    return null;
   }
 }
