@@ -10,3 +10,5 @@ build/
 coverage/
 lib/generated_plugin_registrant.dart
 pubspec.lock
+.flutter_plugins*
+.DS_Store
