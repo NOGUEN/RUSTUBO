@@ -1,0 +1,12 @@
+**/doc/api/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.fvm/flutter_sdk
+.packages
+.pub-cache/
+.pub/
+build/
+coverage/
+lib/generated_plugin_registrant.dart
+pubspec.lock
