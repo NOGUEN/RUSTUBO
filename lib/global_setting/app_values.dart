@@ -1,5 +1,6 @@
 //앱 내 사용할 값들을 저장하는 공간
 abstract class AppValues {
+  static const double webScreenPadding = 300;
   static const double screenPadding = 20;
   static const double margin = 16;
 
@@ -18,4 +19,7 @@ abstract class AppValues {
   static const int defaultPageNumber = 1;
   static const int defaultDebounceTimeInMilliSeconds = 1000;
   static const int defaultThrottleTimeInMilliSeconds = 500;
+
+  static const double webLandingListHeight = 300;
+  static const double webLandingFontSize = 30;
 }
