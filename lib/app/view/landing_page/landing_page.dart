@@ -5,7 +5,10 @@ import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:rutsubo/app/controller/landing_page_controller.dart';
 import 'package:rutsubo/app/core/base/base_view.dart';
+import 'package:rutsubo/app/view/landing_page/landing_lists/landing_list.dart';
 import 'package:rutsubo/global_setting/app_colors.dart';
+import 'package:rutsubo/global_setting/app_string.dart';
+import 'package:rutsubo/responsive.dart';
 
 class LandingPage extends BaseView<LandingPageController> {
   ScrollController scrollController = ScrollController(initialScrollOffset: 0);
@@ -42,7 +45,7 @@ class LandingPage extends BaseView<LandingPageController> {
               super.globalKey.currentState?.openEndDrawer();
             },
             child: Padding(
-              padding: EdgeInsets.only(right: 20, top: 20),
+              padding: const EdgeInsets.only(right: 20, top: 20),
               child: Icon(
                 Icons.menu,
                 size: 36,
@@ -86,12 +89,17 @@ class MainTitleImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(MediaQuery.of(context).size.width);
     return Obx(
       () => Stack(
         children: [
           SizedBox(
             width: double.infinity,
-            height: 700,
+            height: Responsive.isDesktop(context)
+                ? 700
+                : Responsive.isTablet(context)
+                    ? 500
+                    : 300,
             child: Flow(
               delegate: ParallaxFlowDelegate(
                 scrollable: Scrollable.of(context),
@@ -101,7 +109,7 @@ class MainTitleImage extends StatelessWidget {
               children: [
                 SizedBox(
                   child: Image.asset(
-                    'images/landing_title.jpg',
+                    AppString.img_landing_title,
                     fit: BoxFit.cover,
                     key: _backgroundImageKey,
                   ),
@@ -111,19 +119,27 @@ class MainTitleImage extends StatelessWidget {
           ),
           Container(
             width: double.infinity,
-            height: 700,
+            height: Responsive.isDesktop(context)
+                ? 700
+                : Responsive.isTablet(context)
+                    ? 500
+                    : 300,
             decoration: BoxDecoration(
                 color:
                     AppColors.black.withOpacity(controller.setOpacity().value)),
           ),
-          const SizedBox(
-            height: 700,
-            child: Column(
+          SizedBox(
+            height: Responsive.isDesktop(context)
+                ? 700
+                : Responsive.isTablet(context)
+                    ? 500
+                    : 300,
+            child: const Column(
               children: [
                 Spacer(),
                 Center(
                   child: Text(
-                    'RUSTUBO',
+                    AppString.app_title,
                     style: TextStyle(
                       color: AppColors.white,
                       fontSize: 80,
@@ -137,129 +153,6 @@ class MainTitleImage extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class LandingList extends StatelessWidget {
-  LandingList({super.key, required this.controller});
-
-  final GlobalKey _backgroundImageKey = GlobalKey();
-  final LandingPageController controller;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 1500,
-      child: Stack(children: [
-        Flow(
-          delegate: ParallaxFlowDelegate(
-            backgroundImageKey: _backgroundImageKey,
-            scrollable: Scrollable.of(context),
-            listItemContext: context,
-          ),
-          children: [
-            SizedBox(
-              child: Image.asset(
-                'images/landing_background.jpg',
-                fit: BoxFit.cover,
-                key: _backgroundImageKey,
-              ),
-            ),
-          ],
-        ),
-        Container(
-          width: double.infinity,
-          height: 1500,
-          decoration: BoxDecoration(color: AppColors.black.withOpacity(0.8)),
-        ),
-        Column(
-          children: [
-            Container(
-              width: double.infinity,
-              height: 300,
-              color: AppColors.white,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 300),
-                child: Row(
-                  children: [
-                    RichText(
-                      text: const TextSpan(
-                        text: '일본 만화',
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.red,
-                        ),
-                        children: [
-                          TextSpan(
-                            text: '에 도전하고\n싶지 않으신가요?',
-                            style: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              width: double.infinity,
-              height: 300,
-              color: Colors.transparent,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 300),
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: 500,
-                    ),
-                    RichText(
-                      text: const TextSpan(
-                        text: '소년 점프 데즈카 상\n',
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF39D882),
-                        ),
-                        children: [
-                          TextSpan(
-                            text: '수상자의\n전문상담을 받아보세요',
-                            style: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              width: double.infinity,
-              height: 300,
-              color: AppColors.white,
-            ),
-            Container(
-              width: double.infinity,
-              height: 300,
-              color: Colors.transparent,
-            ),
-            Container(
-              width: double.infinity,
-              height: 300,
-              color: Colors.white,
-            )
-          ],
-        ),
-      ]),
     );
   }
 }
