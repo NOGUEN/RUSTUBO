@@ -18,14 +18,50 @@ class LandingPage extends BaseView<LandingPageController> {
   @override
   Widget body(BuildContext context) {
     scrollController.addListener(_scrollListener);
-    return SingleChildScrollView(
-      controller: scrollController,
-      child: Column(
-        children: [
-          MainTitleImage(controller: controller),
-          LandingList(controller: controller),
-          const SizedBox(
-            height: 2000,
+    return Stack(children: [
+      SingleChildScrollView(
+        controller: scrollController,
+        child: Column(
+          children: [
+            MainTitleImage(
+              controller: controller,
+              globalKey: super.globalKey,
+            ),
+            LandingList(controller: controller),
+            const SizedBox(
+              height: 2000,
+            ),
+          ],
+        ),
+      ),
+      Obx(
+        () => Align(
+          alignment: Alignment.topRight,
+          child: GestureDetector(
+            onTap: () {
+              super.globalKey.currentState?.openEndDrawer();
+            },
+            child: Padding(
+              padding: EdgeInsets.only(right: 20, top: 20),
+              child: Icon(
+                Icons.menu,
+                size: 36,
+                color: controller.setColor(),
+              ),
+            ),
+          ),
+        ),
+      )
+    ]);
+  }
+
+  @override
+  Widget? endDrawer() {
+    return Drawer(
+      child: ListView(
+        children: <Widget>[
+          ListTile(
+            title: Text('Item1'),
           ),
         ],
       ),
@@ -41,8 +77,10 @@ class MainTitleImage extends StatelessWidget {
   MainTitleImage({
     super.key,
     required this.controller,
+    required this.globalKey,
   });
 
+  final GlobalKey<ScaffoldState> globalKey;
   final GlobalKey _backgroundImageKey = GlobalKey();
   final LandingPageController controller;
 
@@ -141,11 +179,68 @@ class LandingList extends StatelessWidget {
               width: double.infinity,
               height: 300,
               color: AppColors.white,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 300),
+                child: Row(
+                  children: [
+                    RichText(
+                      text: const TextSpan(
+                        text: '일본 만화',
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.red,
+                        ),
+                        children: [
+                          TextSpan(
+                            text: '에 도전하고\n싶지 않으신가요?',
+                            style: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.black,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
             Container(
               width: double.infinity,
               height: 300,
               color: Colors.transparent,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 300),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 500,
+                    ),
+                    RichText(
+                      text: const TextSpan(
+                        text: '소년 점프 데즈카 상\n',
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF39D882),
+                        ),
+                        children: [
+                          TextSpan(
+                            text: '수상자의\n전문상담을 받아보세요',
+                            style: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
             Container(
               width: double.infinity,
