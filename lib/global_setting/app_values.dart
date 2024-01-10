@@ -22,4 +22,6 @@ abstract class AppValues {
 
   static const double webLandingListHeight = 300;
   static const double webLandingFontSize = 30;
+  static const double tabletLandingFontSize = 28;
+  static const double mobileLandingFontSize = 22;
 }

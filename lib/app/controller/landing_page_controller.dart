@@ -15,6 +15,14 @@ class LandingPageController extends BaseController {
     return (scrollPosition.value * 0.0005 + 0.8).obs;
   }
 
+  Rx<double> setFirstCellOpacity() {
+    if (scrollPosition.value * 0.0015 >= 1) {
+      return 1.0.obs;
+    }
+
+    return (scrollPosition.value * 0.0015).obs;
+  }
+
   Color setColor() {
     if (scrollPosition.value < 680) {
       return AppColors.white;

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rutsubo/app/controller/landing_page_controller.dart';
+import 'package:rutsubo/app/view/landing_page/landing_lists/components/landing_list_cells/landing_list_cell_first.dart';
+import 'package:rutsubo/app/view/landing_page/landing_lists/components/landing_list_cells/landing_list_cell_second.dart';
 import 'package:rutsubo/app/view/landing_page/landing_lists/landing_list_cells.dart';
 import 'package:rutsubo/app/view/landing_page/landing_page.dart';
 import 'package:rutsubo/global_setting/app_colors.dart';
@@ -15,11 +17,7 @@ class LandingList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: Responsive.isDesktop(context)
-          ? 1500
-          : Responsive.isTablet(context)
-              ? 1200
-              : 900,
+      height: 2000,
       child: Stack(children: [
         Flow(
           delegate: ParallaxFlowDelegate(
@@ -42,8 +40,8 @@ class LandingList extends StatelessWidget {
           height: Responsive.isDesktop(context)
               ? 1500
               : Responsive.isTablet(context)
-                  ? 1300
-                  : 1100,
+                  ? 1200
+                  : 900,
           decoration: BoxDecoration(color: AppColors.black.withOpacity(0.8)),
         ),
         SizedBox(
@@ -51,23 +49,9 @@ class LandingList extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const LandingListCell1(),
-              const LandingListCell2(),
-              Container(
-                width: double.infinity,
-                height: 300,
-                color: AppColors.white,
-              ),
-              Container(
-                width: double.infinity,
-                height: 300,
-                color: Colors.transparent,
-              ),
-              Container(
-                width: double.infinity,
-                height: 300,
-                color: Colors.white,
-              )
+              LandingListCellFirst(controller: controller),
+              LandingListCellSecond(),
+              LandingListCell3(),
             ],
           ),
         ),
