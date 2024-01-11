@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rutsubo/app/controller/landing_page_controller.dart';
 import 'package:rutsubo/app/view/landing_page/landing_lists/landing_list_cells.dart';
 import 'package:rutsubo/global_setting/app_colors.dart';
+import 'package:rutsubo/global_setting/app_fontweight.dart';
 import 'package:rutsubo/global_setting/app_values.dart';
 import 'package:rutsubo/responsive.dart';
 
@@ -12,11 +13,11 @@ class LandingListCellFirst extends StatelessWidget {
   });
 
   final LandingPageController controller;
+
   @override
   Widget build(BuildContext context) {
-    return LandingListCell(
+    return LandingListWhiteCell(
       height: 300,
-      backgrondColor: AppColors.white,
       content: Responsive.isDesktop(context)
           ? FirstListCellWeb(
               controller: controller,
@@ -24,6 +25,7 @@ class LandingListCellFirst extends StatelessWidget {
           : Responsive.isTablet(context)
               ? const FirstListCellTablet()
               : const FirstListCellMobile(),
+      backgrondColor: AppColors.white,
     );
   }
 }
@@ -44,14 +46,17 @@ class FirstListCellWeb extends StatelessWidget {
           text: TextSpan(
             style: const TextStyle(
               fontSize: AppValues.webLandingFontSize,
-              fontWeight: FontWeight.bold,
               color: Colors.black,
             ),
             children: [
-              landingTextSpan("일본", Colors.red),
-              landingTextSpan('에서 ', AppColors.black),
-              landingTextSpan('만화가', Colors.red),
-              landingTextSpan('로 데뷔,여러분도 가능합니다!\n', AppColors.black),
+              landingTextSpan("일본", Colors.red,
+                  fontWeight: AppFontWeights.extrabold, fontSize: 40),
+              landingTextSpan('에서 ', AppColors.black,
+                  fontWeight: AppFontWeights.extrabold, fontSize: 40),
+              landingTextSpan('만화가', Colors.red,
+                  fontWeight: AppFontWeights.extrabold, fontSize: 40),
+              landingTextSpan('로 데뷔,여러분도 가능합니다!\n', AppColors.black,
+                  fontWeight: AppFontWeights.extrabold, fontSize: 40),
               landingTextSpan(
                   '세계 최대 만화 시장인 일본에서\n만화가가 되는 길을 알려드립니다!', AppColors.black),
             ],
@@ -78,10 +83,14 @@ class FirstListCellTablet extends StatelessWidget {
               color: Colors.black,
             ),
             children: [
-              landingTextSpan("일본", Colors.red),
-              landingTextSpan('에서 ', AppColors.black),
-              landingTextSpan('만화가', Colors.red),
-              landingTextSpan('로 데뷔,여러분도 가능합니다!\n', AppColors.black),
+              landingTextSpan("일본", Colors.red,
+                  fontWeight: AppFontWeights.extrabold, fontSize: 40),
+              landingTextSpan('에서 ', AppColors.black,
+                  fontWeight: AppFontWeights.extrabold, fontSize: 40),
+              landingTextSpan('만화가', Colors.red,
+                  fontWeight: AppFontWeights.extrabold, fontSize: 40),
+              landingTextSpan('로 데뷔,여러분도 가능합니다!\n', AppColors.black,
+                  fontWeight: AppFontWeights.extrabold, fontSize: 40),
               landingTextSpan(
                   '세계 최대 만화 시장인 일본에서\n만화가가 되는 길을 알려드립니다!', AppColors.black),
             ],
@@ -104,15 +113,17 @@ class FirstListCellMobile extends StatelessWidget {
           text: TextSpan(
             style: const TextStyle(
               fontSize: AppValues.mobileLandingFontSize,
-              fontWeight: FontWeight.bold,
               color: Colors.black,
             ),
             children: [
               landingTextSpan("일본", Colors.red,
-                  fontSize: AppValues.mobileLandingFontSize),
-              landingTextSpan('에서 ', AppColors.black),
-              landingTextSpan('만화가', Colors.red),
-              landingTextSpan('로 데뷔,여러분도 가능합니다!\n', AppColors.black),
+                  fontWeight: AppFontWeights.extrabold, fontSize: 30),
+              landingTextSpan('에서 ', AppColors.black,
+                  fontWeight: AppFontWeights.extrabold, fontSize: 30),
+              landingTextSpan('만화가', Colors.red,
+                  fontWeight: AppFontWeights.extrabold, fontSize: 30),
+              landingTextSpan('로 데뷔,\n여러분도 가능합니다!\n', AppColors.black,
+                  fontWeight: AppFontWeights.extrabold, fontSize: 28),
               landingTextSpan(
                   '세계 최대 만화 시장인 일본에서\n만화가가 되는 길을 알려드립니다!', AppColors.black),
             ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rutsubo/app/view/landing_page/landing_lists/landing_list_cells.dart';
 import 'package:rutsubo/global_setting/app_colors.dart';
+import 'package:rutsubo/global_setting/app_string.dart';
 import 'package:rutsubo/global_setting/app_values.dart';
 import 'package:rutsubo/responsive.dart';
 
@@ -9,14 +10,16 @@ class LandingListCellSecond extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LandingListCell(
-      backgrondColor: AppColors.transparent,
+    return LandingListFlowCell(
       height: 600,
       content: Responsive.isDesktop(context)
           ? const SecondListCellWeb()
           : Responsive.isTablet(context)
               ? const SecondListCellTablet()
               : const SecondListCellMobile(),
+      imgPath: Responsive.isMobile(context)
+          ? AppString.img_landing_background_full
+          : AppString.img_landing_background_1,
     );
   }
 }
@@ -44,9 +47,9 @@ class SecondListCellWeb extends StatelessWidget {
               landingTextSpan("저는\n", AppColors.white, fontSize: 80),
               landingTextSpan("\n", AppColors.white, fontSize: 0),
               landingTextSpan("소년 점프 제 99회\n", AppColors.white),
-              landingTextSpan("데즈카상", Colors.green, fontSize: 35),
+              landingTextSpan("데즈카상", AppColors.highlightGreen, fontSize: 35),
               landingTextSpan("을 수상하고,\n현재 ", AppColors.white),
-              landingTextSpan("주간소년점프", Colors.red, fontSize: 35),
+              landingTextSpan("주간소년점프", AppColors.highlightRed, fontSize: 35),
               landingTextSpan("에서\n", AppColors.white),
               landingTextSpan('단편게재, 일러스트 제작 등을\n하며 신인작가로써\n만화활동을 하고 있습니다.',
                   AppColors.white),

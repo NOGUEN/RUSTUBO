@@ -17,7 +17,7 @@ class LandingList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 2000,
+      height: Responsive.isMobile(context) ? 1000 : 1500,
       child: Stack(children: [
         Flow(
           delegate: ParallaxFlowDelegate(
