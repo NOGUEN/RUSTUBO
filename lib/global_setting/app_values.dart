@@ -21,6 +21,9 @@ abstract class AppValues {
   static const int defaultThrottleTimeInMilliSeconds = 500;
 
   static const double webLandingListHeight = 300;
+  static const double tabletLandingListHeight = 300;
+  static const double mobileandingListHeight = 200;
+
   static const double webLandingFontSize = 30;
   static const double tabletLandingFontSize = 28;
   static const double mobileLandingFontSize = 22;
