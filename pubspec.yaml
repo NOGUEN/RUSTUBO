@@ -97,6 +97,15 @@ flutter:
     - family: ChungjuKimSaeng
       fonts:
         - asset: fonts/ChungjuKimSaeng.ttf
+    - family: SUITE
+      fonts:
+        - asset: fonts/SUITE-Light.ttf
+        - asset: fonts/SUITE-Regular.ttf
+        - asset: fonts/SUITE-Medium.ttf
+        - asset: fonts/SUITE-SemiBold.ttf
+        - asset: fonts/SUITE-Bold.ttf
+        - asset: fonts/SUITE-ExtraBold.ttf
+        - asset: fonts/SUITE-Heavy.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
