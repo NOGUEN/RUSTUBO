@@ -58,6 +58,7 @@ class FirstListCellWeb extends StatelessWidget {
                     fontWeight: AppFontWeights.extrabold, fontSize: 40),
                 landingTextSpan('로 데뷔,여러분도 가능합니다!\n', AppColors.black,
                     fontWeight: AppFontWeights.extrabold, fontSize: 40),
+                landingTextSpan('\n', AppColors.black, fontSize: 10),
                 landingTextSpan(
                     '세계 최대 만화 시장인 일본에서\n만화가가 되는 길을 알려드립니다!', AppColors.black),
               ],
@@ -92,6 +93,7 @@ class FirstListCellTablet extends StatelessWidget {
                   fontWeight: AppFontWeights.extrabold, fontSize: 40),
               landingTextSpan('로 데뷔,여러분도 가능합니다!\n', AppColors.black,
                   fontWeight: AppFontWeights.extrabold, fontSize: 40),
+              landingTextSpan('\n', AppColors.black, fontSize: 10),
               landingTextSpan(
                   '세계 최대 만화 시장인 일본에서\n만화가가 되는 길을 알려드립니다!', AppColors.black),
             ],
