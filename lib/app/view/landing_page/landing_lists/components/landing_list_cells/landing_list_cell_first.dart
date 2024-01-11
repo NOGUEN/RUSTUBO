@@ -39,27 +39,29 @@ class FirstListCellWeb extends StatelessWidget {
   final LandingPageController controller;
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Stack(
       children: [
-        RichText(
-          textAlign: TextAlign.center,
-          text: TextSpan(
-            style: const TextStyle(
-              fontSize: AppValues.webLandingFontSize,
-              color: Colors.black,
+        Center(
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+              style: const TextStyle(
+                fontSize: AppValues.webLandingFontSize,
+                color: Colors.black,
+              ),
+              children: [
+                landingTextSpan("일본", Colors.red,
+                    fontWeight: AppFontWeights.extrabold, fontSize: 40),
+                landingTextSpan('에서 ', AppColors.black,
+                    fontWeight: AppFontWeights.extrabold, fontSize: 40),
+                landingTextSpan('만화가', Colors.red,
+                    fontWeight: AppFontWeights.extrabold, fontSize: 40),
+                landingTextSpan('로 데뷔,여러분도 가능합니다!\n', AppColors.black,
+                    fontWeight: AppFontWeights.extrabold, fontSize: 40),
+                landingTextSpan(
+                    '세계 최대 만화 시장인 일본에서\n만화가가 되는 길을 알려드립니다!', AppColors.black),
+              ],
             ),
-            children: [
-              landingTextSpan("일본", Colors.red,
-                  fontWeight: AppFontWeights.extrabold, fontSize: 40),
-              landingTextSpan('에서 ', AppColors.black,
-                  fontWeight: AppFontWeights.extrabold, fontSize: 40),
-              landingTextSpan('만화가', Colors.red,
-                  fontWeight: AppFontWeights.extrabold, fontSize: 40),
-              landingTextSpan('로 데뷔,여러분도 가능합니다!\n', AppColors.black,
-                  fontWeight: AppFontWeights.extrabold, fontSize: 40),
-              landingTextSpan(
-                  '세계 최대 만화 시장인 일본에서\n만화가가 되는 길을 알려드립니다!', AppColors.black),
-            ],
           ),
         ),
       ],
@@ -79,7 +81,6 @@ class FirstListCellTablet extends StatelessWidget {
           text: TextSpan(
             style: const TextStyle(
               fontSize: AppValues.tabletLandingFontSize,
-              fontWeight: FontWeight.bold,
               color: Colors.black,
             ),
             children: [
@@ -124,6 +125,7 @@ class FirstListCellMobile extends StatelessWidget {
                   fontWeight: AppFontWeights.extrabold, fontSize: 30),
               landingTextSpan('로 데뷔,\n여러분도 가능합니다!\n', AppColors.black,
                   fontWeight: AppFontWeights.extrabold, fontSize: 28),
+              landingTextSpan('\n', AppColors.black, fontSize: 10),
               landingTextSpan(
                   '세계 최대 만화 시장인 일본에서\n만화가가 되는 길을 알려드립니다!', AppColors.black),
             ],
