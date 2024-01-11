@@ -140,7 +140,6 @@ class MainTitleImage extends StatelessWidget {
                       color: AppColors.white,
                       fontSize: Responsive.isMobile(context) ? 50 : 80,
                       fontWeight: FontWeight.bold,
-                      fontFamily: 'ChungjuKimSaeng',
                     ),
                   ),
                 ),

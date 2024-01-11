@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:rutsubo/app/view/landing_page/landing_page.dart';
 import 'package:rutsubo/global_setting/app_colors.dart';
+import 'package:rutsubo/global_setting/app_fontweight.dart';
 import 'package:rutsubo/global_setting/app_values.dart';
 
 class LandingListWhiteCell extends StatelessWidget {
@@ -93,13 +94,13 @@ class LandingListFlowCell extends StatelessWidget {
 }
 
 TextSpan landingTextSpan(String text, Color color,
-    {double? fontSize, FontWeight? fontWeight}) {
+    {double? fontSize, FontWeight? fontWeight = AppFontWeights.bold}) {
   return TextSpan(
     text: text,
     style: TextStyle(
       fontSize: fontSize,
+      fontFamily: 'SUITE',
       fontWeight: fontWeight,
-      fontFamily: 'ChungjuKimSaeng',
       color: color,
     ),
   );
