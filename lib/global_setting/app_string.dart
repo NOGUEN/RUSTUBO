@@ -3,6 +3,7 @@
 abstract class AppString {
   static const app_title = "RUSTUBO+";
 
+  static const logo_rustubo = 'images/rustubo.png';
   static const img_landing_title = 'images/landing_title.png';
   static const img_landing_background = 'images/landing_background.png';
   static const img_landing_background_full =
