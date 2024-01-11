@@ -94,6 +94,8 @@ flutter:
         - asset: fonts/Pretendard-Bold.ttf
         - asset: fonts/Pretendard-ExtraBold.ttf
         - asset: fonts/Pretendard-Black.ttf
+    - family: ChungjuKimSaeng
+      fonts:
         - asset: fonts/ChungjuKimSaeng.ttf
   #
   # For details regarding fonts from package dependencies,
