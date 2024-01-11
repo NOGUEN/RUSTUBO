@@ -17,7 +17,7 @@ class LandingListCellFirst extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LandingListWhiteCell(
-      height: 300,
+      height: Responsive.isMobile(context) ? 200 : 250,
       content: Responsive.isDesktop(context)
           ? FirstListCellWeb(
               controller: controller,

@@ -31,9 +31,6 @@ class LandingPage extends BaseView<LandingPageController> {
               globalKey: super.globalKey,
             ),
             LandingList(controller: controller),
-            const SizedBox(
-              height: 2000,
-            ),
           ],
         ),
       ),
