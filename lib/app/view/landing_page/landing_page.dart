@@ -95,10 +95,10 @@ class MainTitleImage extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             height: Responsive.isDesktop(context)
-                ? 700
+                ? 600
                 : Responsive.isTablet(context)
-                    ? 500
-                    : 300,
+                    ? 400
+                    : 250,
             child: Flow(
               delegate: ParallaxFlowDelegate(
                 scrollable: Scrollable.of(context),
@@ -119,34 +119,35 @@ class MainTitleImage extends StatelessWidget {
           Container(
             width: double.infinity,
             height: Responsive.isDesktop(context)
-                ? 700
+                ? 600
                 : Responsive.isTablet(context)
-                    ? 500
-                    : 300,
+                    ? 400
+                    : 250,
             decoration: BoxDecoration(
                 color:
                     AppColors.black.withOpacity(controller.setOpacity().value)),
           ),
           SizedBox(
             height: Responsive.isDesktop(context)
-                ? 700
+                ? 600
                 : Responsive.isTablet(context)
-                    ? 500
-                    : 300,
-            child: const Column(
+                    ? 400
+                    : 250,
+            child: Column(
               children: [
-                Spacer(),
+                const Spacer(),
                 Center(
                   child: Text(
                     AppString.app_title,
                     style: TextStyle(
                       color: AppColors.white,
-                      fontSize: 80,
+                      fontSize: Responsive.isMobile(context) ? 50 : 80,
                       fontWeight: FontWeight.bold,
+                      fontFamily: 'ChungjuKimSaeng',
                     ),
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
               ],
             ),
           ),

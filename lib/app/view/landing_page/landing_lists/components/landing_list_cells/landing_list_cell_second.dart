@@ -18,8 +18,8 @@ class LandingListCellSecond extends StatelessWidget {
               ? const SecondListCellTablet()
               : const SecondListCellMobile(),
       imgPath: Responsive.isMobile(context)
-          ? AppString.img_landing_background_full
-          : AppString.img_landing_background_1,
+          ? AppString.img_landing_background_full_2
+          : AppString.img_landing_background_4,
     );
   }
 }
@@ -40,11 +40,10 @@ class SecondListCellWeb extends StatelessWidget {
           text: TextSpan(
             style: const TextStyle(
               fontSize: AppValues.webLandingFontSize,
-              fontWeight: FontWeight.bold,
               color: Colors.black,
+              height: AppValues.lineHeight,
             ),
             children: [
-              landingTextSpan("저는\n", AppColors.white, fontSize: 80),
               landingTextSpan("\n", AppColors.white, fontSize: 0),
               landingTextSpan("소년 점프 제 99회\n", AppColors.white),
               landingTextSpan("데즈카상", AppColors.highlightGreen, fontSize: 35),
@@ -69,7 +68,7 @@ class SecondListCellTablet extends StatelessWidget {
     return Row(
       children: [
         SizedBox(
-          height: 500,
+          height: 400,
           child: Image.asset('images/manga.png'),
         ),
         const SizedBox(width: 100),
@@ -77,16 +76,15 @@ class SecondListCellTablet extends StatelessWidget {
           text: TextSpan(
             style: const TextStyle(
               fontSize: AppValues.tabletLandingFontSize,
-              fontWeight: FontWeight.bold,
               color: Colors.black,
+              height: AppValues.lineHeight,
             ),
             children: [
-              landingTextSpan("저는\n", AppColors.white, fontSize: 80),
               landingTextSpan("\n", AppColors.white, fontSize: 40),
               landingTextSpan("소년 점프 제 99회\n", AppColors.white),
-              landingTextSpan("데즈카상", Colors.green, fontSize: 35),
+              landingTextSpan("데즈카상", AppColors.highlightGreen, fontSize: 35),
               landingTextSpan("을 수상하고,\n현재 ", AppColors.white),
-              landingTextSpan("주간소년점프", Colors.red, fontSize: 35),
+              landingTextSpan("주간소년점프", AppColors.highlightRed, fontSize: 35),
               landingTextSpan("에서\n", AppColors.white),
               landingTextSpan('단편게재, 일러스트 제작 등을\n하며 신인작가로써\n만화활동을 하고 있습니다.',
                   AppColors.white),
@@ -105,29 +103,31 @@ class SecondListCellMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const Spacer(),
         SizedBox(
-          height: 200,
+          height: 250,
           child: Image.asset('images/manga.png'),
         ),
+        const SizedBox(height: 30),
         RichText(
           text: TextSpan(
             style: const TextStyle(
               fontSize: AppValues.mobileLandingFontSize,
-              fontWeight: FontWeight.bold,
               color: Colors.black,
+              height: AppValues.lineHeight,
             ),
             children: [
-              landingTextSpan("저는 ", AppColors.white, fontSize: 70),
               landingTextSpan("소년 점프 제 99회\n", AppColors.white),
-              landingTextSpan("데즈카상", Colors.green, fontSize: 30),
-              landingTextSpan("을 수상하고, 현재 ", AppColors.white),
-              landingTextSpan("주간소년점프", Colors.red, fontSize: 30),
+              landingTextSpan("데즈카상", AppColors.highlightGreen, fontSize: 30),
+              landingTextSpan("을 수상하고, \n현재 ", AppColors.white),
+              landingTextSpan("주간소년점프", AppColors.highlightRed, fontSize: 30),
               landingTextSpan("에서\n", AppColors.white),
-              landingTextSpan('단편게재, 일러스트 제작 등을 하며 신인작가로써\n만화활동을 하고 있습니다.',
+              landingTextSpan('단편게재, 일러스트 제작 등을 하며\n신인작가로써\n만화활동을 하고 있습니다.',
                   AppColors.white),
             ],
           ),
         ),
+        const Spacer(),
       ],
     );
   }

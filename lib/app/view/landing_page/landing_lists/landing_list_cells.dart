@@ -74,7 +74,7 @@ class LandingListFlowCell extends StatelessWidget {
         Container(
           width: double.infinity,
           height: height,
-          decoration: BoxDecoration(color: AppColors.black.withOpacity(0.6)),
+          decoration: BoxDecoration(color: AppColors.black.withOpacity(0.8)),
         ),
         SizedBox(
           width: double.infinity,
@@ -99,34 +99,8 @@ TextSpan landingTextSpan(String text, Color color,
     style: TextStyle(
       fontSize: fontSize,
       fontWeight: fontWeight,
+      fontFamily: 'ChungjuKimSaeng',
       color: color,
     ),
   );
-}
-
-class LandingListCell3 extends StatelessWidget {
-  const LandingListCell3({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return LandingListWhiteCell(
-      backgrondColor: AppColors.white,
-      content: Row(
-        children: [
-          RichText(
-            text: TextSpan(
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-              children: [
-                landingTextSpan("RUSTUBO란?", AppColors.black,
-                    fontSize: 60, fontWeight: FontWeight.bold),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 }
