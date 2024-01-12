@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rutsubo/app/view/landing_page/landing_lists/landing_list_cells.dart';
 import 'package:rutsubo/global_setting/app_colors.dart';
 import 'package:rutsubo/global_setting/app_string.dart';
@@ -11,7 +12,7 @@ class LandingTitle extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(40),
       child: LandingMangaCell(
-        height: 650,
+        height: 650.w,
         width: double.infinity,
         content: Stack(
           children: [
@@ -30,18 +31,18 @@ class LandingTitle extends StatelessWidget {
                   Text(
                     AppString.app_title,
                     style: TextStyle(
-                      fontSize: 80,
+                      fontSize: 80.sp,
                       fontFamily: 'JALNAN',
                       foreground: Paint()
                         ..style = PaintingStyle.stroke
-                        ..strokeWidth = 6
+                        ..strokeWidth = 6.w
                         ..color = AppColors.black,
                     ),
                   ),
-                  const Text(
+                  Text(
                     AppString.app_title,
                     style: TextStyle(
-                      fontSize: 80,
+                      fontSize: 80.sp,
                       fontFamily: 'JALNAN',
                       color: AppColors.white,
                     ),
