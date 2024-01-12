@@ -1,7 +1,9 @@
 //앱 내 사용할 값들을 저장하는 공간
+
 abstract class AppValues {
+  static const double screenWidth = 1440;
   static const double webScreenPadding = 300;
-  static const double screenPadding = 20;
+  static const double manuscriptPadding = 40;
   static const double margin = 16;
 
   static const double buttonRadius = 8;

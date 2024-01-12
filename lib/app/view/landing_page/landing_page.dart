@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rutsubo/app/controller/landing_page_controller.dart';
 import 'package:rutsubo/app/core/base/base_view.dart';
 import 'package:rutsubo/app/view/landing_page/landing_lists/components/landing_background.dart';
@@ -26,7 +27,12 @@ class LandingPage extends BaseView<LandingPageController> {
           child: Column(
             children: [
               const SizedBox(height: 60),
-              LandingBackground(content: LandingList(controller: controller))
+              LandingBackground(content: LandingList(controller: controller)),
+              Container(
+                height: 500.w,
+                width: double.infinity,
+                color: AppColors.black,
+              )
             ],
           ),
         ),
@@ -40,7 +46,9 @@ class LandingPage extends BaseView<LandingPageController> {
           child: Container(
             width: double.infinity,
             height: 60,
-            color: AppColors.white,
+            decoration: const BoxDecoration(
+              color: AppColors.white,
+            ),
             child: const Align(
               alignment: Alignment.centerRight,
               child: Padding(

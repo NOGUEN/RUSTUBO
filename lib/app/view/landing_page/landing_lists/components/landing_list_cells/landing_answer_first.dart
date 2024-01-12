@@ -1,37 +1,100 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:rutsubo/app/controller/landing_page_controller.dart';
 import 'package:rutsubo/app/view/landing_page/landing_lists/landing_list_cells.dart';
 import 'package:rutsubo/global_setting/app_colors.dart';
 import 'package:rutsubo/global_setting/app_string.dart';
 
 class LandingAnswerFirst extends StatelessWidget {
-  const LandingAnswerFirst({super.key, required this.controller});
-
-  final LandingPageController controller;
+  const LandingAnswerFirst({super.key});
 
   @override
   Widget build(BuildContext context) {
-    controller.screenWidth.value = MediaQuery.of(context).size.width;
     return Padding(
-      padding: EdgeInsets.only(left: 40.w, right: 40.w, bottom: 40.w),
+      padding: EdgeInsets.only(
+        left: 40.w,
+        right: 40.w,
+        bottom: 40.w,
+      ),
       child: SizedBox(
-          child: Row(
-        children: [
-          LandingMangaCell(
-            height: 360.w,
-            width: 920.w,
-            content: const IntroduceContent(),
-          ),
-          const Spacer(),
-          LandingMangaCell(
-            height: 360.w,
-            width: 200.w,
-            color: AppColors.black,
-            content: const AggroContent(),
-          ),
-        ],
-      )),
+        child: WebContent(),
+        // child: Responsive.isDesktop(context)
+        //     ? WebContent()
+        //     : Responsive.isTablet(context)
+        //         ? TabletContent()
+        //         : MobileContent(),
+      ),
+    );
+  }
+}
+
+class WebContent extends StatelessWidget {
+  const WebContent({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        LandingMangaCell(
+          height: 360.w,
+          width: 950.w,
+          content: const IntroduceContent(),
+        ),
+        const Spacer(),
+        LandingMangaCell(
+          height: 360.w,
+          width: 200.w,
+          color: AppColors.black,
+          content: const AggroContent(),
+        ),
+      ],
+    );
+  }
+}
+
+class TabletContent extends StatelessWidget {
+  const TabletContent({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        LandingMangaCell(
+          height: 360.w,
+          width: 920.w,
+          content: const IntroduceContent(),
+        ),
+        const Spacer(),
+        LandingMangaCell(
+          height: 360.w,
+          width: 180.w,
+          color: AppColors.black,
+          content: const AggroContent(),
+        ),
+      ],
+    );
+  }
+}
+
+class MobileContent extends StatelessWidget {
+  const MobileContent({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        LandingMangaCell(
+          height: 360.w,
+          width: 920.w,
+          content: const IntroduceContent(),
+        ),
+        const Spacer(),
+        LandingMangaCell(
+          height: 360.w,
+          width: 200.w,
+          color: AppColors.black,
+          content: const AggroContent(),
+        ),
+      ],
     );
   }
 }
@@ -80,7 +143,7 @@ class IntroduceContent extends StatelessWidget {
               textAlign: TextAlign.start,
               style: TextStyle(
                 letterSpacing: 1.w,
-                fontSize: 26.w,
+                fontSize: 26.sp,
               ),
             ),
             const Spacer(),

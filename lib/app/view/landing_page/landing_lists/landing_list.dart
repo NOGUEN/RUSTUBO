@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rutsubo/app/controller/landing_page_controller.dart';
-import 'package:rutsubo/app/view/landing_page/landing_lists/components/landing_list_cells/landing_answer.dart';
+import 'package:rutsubo/app/view/landing_page/landing_lists/components/landing_cta_button.dart';
+import 'package:rutsubo/app/view/landing_page/landing_lists/components/landing_list_cells/landing_answer_first.dart';
 import 'package:rutsubo/app/view/landing_page/landing_lists/components/landing_list_cells/landing_answer_second.dart';
 import 'package:rutsubo/app/view/landing_page/landing_lists/components/landing_list_cells/landing_answer_third.dart';
 import 'package:rutsubo/app/view/landing_page/landing_lists/components/landing_list_cells/landing_introduce.dart';
@@ -20,9 +22,11 @@ class LandingList extends StatelessWidget {
         LandingTitle(),
         LandingIntroduce(controller: controller),
         LandingThreeThings(),
-        LandingAnswerFirst(controller: controller),
-        LandingAnswerSecond(controller: controller),
-        LandingAnswerThird(controller: controller),
+        LandingAnswerFirst(),
+        LandingAnswerSecond(),
+        LandingAnswerThird(),
+        LandingCTAButton(),
+        SizedBox(height: 40.w),
       ],
     );
   }

@@ -12,7 +12,7 @@ class LandingTitle extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(40.w),
       child: LandingMangaCell(
-        height: 650.w,
+        height: 450.w,
         width: double.infinity,
         content: Stack(
           children: [
@@ -20,7 +20,9 @@ class LandingTitle extends StatelessWidget {
               width: double.infinity,
               child: Image.asset(
                 AppString.img_landing_background_1,
-                fit: BoxFit.none,
+                width: 1200.w,
+                height: 450.w,
+                fit: BoxFit.cover,
                 color: Colors.white.withOpacity(0.6),
                 colorBlendMode: BlendMode.modulate,
               ),

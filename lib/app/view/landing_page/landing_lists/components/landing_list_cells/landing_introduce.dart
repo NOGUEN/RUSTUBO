@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:rutsubo/app/controller/landing_page_controller.dart';
 import 'package:rutsubo/app/view/landing_page/landing_lists/landing_list_cells.dart';
 import 'package:rutsubo/global_setting/app_colors.dart';
@@ -17,26 +16,21 @@ class LandingIntroduce extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(left: 40.w, right: 40.w, bottom: 40.w),
       child: SizedBox(
-        child: Obx(
-          () {
-            if (controller.screenWidth.value == 0) {}
-            return Row(
-              children: [
-                LandingMangaCell(
-                  height: 360.w,
-                  width: 200.w,
-                  color: AppColors.black,
-                  content: const AggroContent(),
-                ),
-                const Spacer(),
-                LandingMangaCell(
-                  height: 360.w,
-                  width: 920.w,
-                  content: const IntroduceContent(),
-                )
-              ],
-            );
-          },
+        child: Row(
+          children: [
+            LandingMangaCell(
+              height: 360.w,
+              width: 200.w,
+              color: AppColors.black,
+              content: const AggroContent(),
+            ),
+            const Spacer(),
+            LandingMangaCell(
+              height: 360.w,
+              width: 950.w,
+              content: const IntroduceContent(),
+            )
+          ],
         ),
       ),
     );

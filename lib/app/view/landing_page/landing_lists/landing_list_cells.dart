@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:rutsubo/global_setting/app_fontweight.dart';
 
@@ -15,7 +16,7 @@ class LandingMangaCell extends StatelessWidget {
 
   final double height;
   final Widget content;
-  final double width;
+  final double? width;
   Color? color;
 
   @override
@@ -24,7 +25,7 @@ class LandingMangaCell extends StatelessWidget {
       height: height,
       width: width,
       decoration: BoxDecoration(
-        border: Border.all(width: 8),
+        border: Border.all(width: 8.w),
         color: color,
       ),
       child: content,
