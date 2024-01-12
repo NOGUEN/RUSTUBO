@@ -10,7 +10,7 @@ class LandingTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(40),
+      padding: EdgeInsets.all(40.w),
       child: LandingMangaCell(
         height: 650.w,
         width: double.infinity,

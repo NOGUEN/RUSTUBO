@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:rutsubo/app/controller/landing_page_controller.dart';
 import 'package:rutsubo/app/view/landing_page/landing_lists/landing_list_cells.dart';
 import 'package:rutsubo/global_setting/app_colors.dart';
 import 'package:rutsubo/global_setting/app_string.dart';
 
-class LandingIntroduce extends StatelessWidget {
-  const LandingIntroduce({super.key, required this.controller});
+class LandingAnswerFirst extends StatelessWidget {
+  const LandingAnswerFirst({super.key, required this.controller});
 
   final LandingPageController controller;
 
@@ -17,28 +16,22 @@ class LandingIntroduce extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(left: 40.w, right: 40.w, bottom: 40.w),
       child: SizedBox(
-        child: Obx(
-          () {
-            if (controller.screenWidth.value == 0) {}
-            return Row(
-              children: [
-                LandingMangaCell(
-                  height: 360.w,
-                  width: 200.w,
-                  color: AppColors.black,
-                  content: const AggroContent(),
-                ),
-                const Spacer(),
-                LandingMangaCell(
-                  height: 360.w,
-                  width: 920.w,
-                  content: const IntroduceContent(),
-                )
-              ],
-            );
-          },
-        ),
-      ),
+          child: Row(
+        children: [
+          LandingMangaCell(
+            height: 360.w,
+            width: 920.w,
+            content: const IntroduceContent(),
+          ),
+          const Spacer(),
+          LandingMangaCell(
+            height: 360.w,
+            width: 200.w,
+            color: AppColors.black,
+            content: const AggroContent(),
+          ),
+        ],
+      )),
     );
   }
 }
@@ -49,15 +42,12 @@ class AggroContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: RotatedBox(
-        quarterTurns: 1,
-        child: Text(
-          '잠깐!',
-          style: TextStyle(
-            fontFamily: AppString.font_family_jalnan,
-            color: AppColors.white,
-            fontSize: 80.sp,
-          ),
+      child: Text(
+        '첫\n째',
+        style: TextStyle(
+          fontFamily: AppString.font_family_jalnan,
+          color: AppColors.white,
+          fontSize: 80.sp,
         ),
       ),
     );
@@ -77,7 +67,7 @@ class IntroduceContent extends StatelessWidget {
           children: [
             const Spacer(),
             Text(
-              'RUTSUBO+ 란?',
+              '멘토의 피드백',
               style: TextStyle(
                 fontFamily: AppString.font_family_jalnan,
                 fontSize: 50.sp,
@@ -85,20 +75,14 @@ class IntroduceContent extends StatelessWidget {
             ),
             SizedBox(height: 5.w),
             Text(
-              '해외 출신 만화가지망생들의 일본만화 데뷔를\n목적으로 한 만화연구회입니다! \n수년간 축적한 연구회의 노하우로 \n막막한 지망생분들께 피드백과 \n상담활동을 해드리고 있습니다!',
+              '데즈카상을 수상하고, 소년점프에서 활동 한 경험,\n대학원에서 연구한 일본 대중만화에 대한 제작론을 통해\n만화에 대해 피드백을 진행합니다!',
+              textAlign: TextAlign.start,
               style: TextStyle(
                 fontSize: 26.w,
               ),
             ),
             const Spacer(),
           ],
-        ),
-        SizedBox(
-          height: 300.w,
-          width: 300.w,
-          child: Image.asset(
-            AppString.logo_rustubo,
-          ),
         ),
         const Spacer(),
       ],

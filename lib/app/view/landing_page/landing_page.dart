@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:rutsubo/app/controller/landing_page_controller.dart';
 import 'package:rutsubo/app/core/base/base_view.dart';
 import 'package:rutsubo/app/view/landing_page/landing_lists/components/landing_background.dart';
@@ -17,6 +18,7 @@ class LandingPage extends BaseView<LandingPageController> {
 
   @override
   Widget body(BuildContext context) {
+    scrollController.addListener(_scrollListener);
     return Stack(children: [
       Scrollbar(
         controller: scrollController,
@@ -32,24 +34,28 @@ class LandingPage extends BaseView<LandingPageController> {
           ),
         ),
       ),
-      Align(
-        alignment: Alignment.topRight,
-        child: GestureDetector(
-          onTap: () {
-            super.globalKey.currentState?.openEndDrawer();
-          },
-          child: Container(
-            width: double.infinity,
-            height: 60,
-            color: AppColors.transparent,
-            child: const Align(
-              alignment: Alignment.centerRight,
-              child: Padding(
-                padding: EdgeInsets.only(right: 20),
-                child: Icon(
-                  Icons.menu,
-                  size: 36,
-                  color: AppColors.white,
+      Obx(
+        () => Align(
+          alignment: Alignment.topRight,
+          child: GestureDetector(
+            onTap: () {
+              super.globalKey.currentState?.openEndDrawer();
+            },
+            child: Container(
+              width: double.infinity,
+              height: 60,
+              color: AppColors.white
+                  .withOpacity(controller.setOpacity(context).value),
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 20),
+                  child: Icon(
+                    Icons.menu,
+                    size: 36,
+                    color: AppColors.black
+                        .withOpacity(controller.setOpacity(context).value),
+                  ),
                 ),
               ),
             ),
@@ -70,5 +76,9 @@ class LandingPage extends BaseView<LandingPageController> {
         ],
       ),
     );
+  }
+
+  _scrollListener() {
+    controller.scrollPosition.value = scrollController.offset;
   }
 }
