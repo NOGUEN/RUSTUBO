@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rutsubo/app/controller/landing_page_controller.dart';
-import 'package:rutsubo/app/view/landing_page/landing_lists/components/landing_list_cells/landing_list_cell_first.dart';
-import 'package:rutsubo/app/view/landing_page/landing_lists/components/landing_list_cells/landing_list_cell_fourth.dart';
-import 'package:rutsubo/app/view/landing_page/landing_lists/components/landing_list_cells/landing_list_cell_second.dart';
-import 'package:rutsubo/app/view/landing_page/landing_lists/components/landing_list_cells/landing_list_cell_third.dart';
+import 'package:rutsubo/app/view/landing_page/landing_lists/components/landing_list_cells/landing_introduce.dart';
+import 'package:rutsubo/app/view/landing_page/landing_lists/components/landing_list_cells/landing_title.dart';
 
 class LandingList extends StatelessWidget {
   const LandingList({super.key, required this.controller});
@@ -15,10 +13,8 @@ class LandingList extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        LandingListCellFirst(controller: controller),
-        const LandingListCellSecond(),
-        const LandingListCellThird(),
-        const LandingListCellFourth()
+        LandingTitle(),
+        LandingIntroduce(),
       ],
     );
   }

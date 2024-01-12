@@ -1,7 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
 abstract class AppString {
-  static const app_title = "RUSTUBO+";
+  static const app_title = "RUTSUBO+";
 
   static const logo_rustubo = 'images/rustubo.png';
   static const img_landing_title = 'images/landing_title.png';
