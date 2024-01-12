@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:rutsubo/app/bindings/initial_binding.dart';
 import 'package:rutsubo/app/routes/app_pages.dart';
@@ -18,14 +19,19 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: _envConfig.appName,
-      debugShowCheckedModeBanner: false,
-      initialRoute: AppPages.INITIAL,
-      getPages: AppPages.pages,
-      initialBinding: InitialBinding(),
-      theme: appThemeData,
-      defaultTransition: Transition.fade,
+    return ScreenUtilInit(
+      designSize: const Size(1440, 1024),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      child: GetMaterialApp(
+        title: _envConfig.appName,
+        debugShowCheckedModeBanner: false,
+        initialRoute: AppPages.INITIAL,
+        getPages: AppPages.pages,
+        initialBinding: InitialBinding(),
+        theme: appThemeData,
+        defaultTransition: Transition.fade,
+      ),
     );
   }
 }
