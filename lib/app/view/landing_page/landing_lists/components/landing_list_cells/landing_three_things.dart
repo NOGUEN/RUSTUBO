@@ -20,13 +20,6 @@ class LandingThreeThings extends StatelessWidget {
               color: AppColors.black,
               content: const Question(),
             ),
-            SizedBox(height: 40.w),
-            LandingMangaCell(
-              height: 360.w,
-              width: double.infinity,
-              color: AppColors.white,
-              content: Container(),
-            ),
           ],
         ),
       ),
@@ -43,24 +36,7 @@ class Question extends StatelessWidget {
       child: Text(
         '그렇다면 RUTSUBO+는 어떤 것들을 지원해주나요?',
         style: TextStyle(
-          fontFamily: AppString.font_family_jalnan,
-          color: AppColors.white,
-          fontSize: 40.sp,
-        ),
-      ),
-    );
-  }
-}
-
-class Answer extends StatelessWidget {
-  const Answer({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        '그렇다면 RUTSUBO+는 어떤 것들을 지원해주나요?',
-        style: TextStyle(
+          letterSpacing: 5.w,
           fontFamily: AppString.font_family_jalnan,
           color: AppColors.white,
           fontSize: 40.sp,

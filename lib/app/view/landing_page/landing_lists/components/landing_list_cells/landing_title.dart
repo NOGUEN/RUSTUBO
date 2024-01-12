@@ -19,7 +19,7 @@ class LandingTitle extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: Image.asset(
-                AppString.img_landing_title,
+                AppString.img_landing_background_1,
                 fit: BoxFit.none,
                 color: Colors.white.withOpacity(0.6),
                 colorBlendMode: BlendMode.modulate,
@@ -31,11 +31,12 @@ class LandingTitle extends StatelessWidget {
                   Text(
                     AppString.app_title,
                     style: TextStyle(
+                      letterSpacing: 5.w,
                       fontSize: 80.sp,
-                      fontFamily: 'JALNAN',
+                      fontFamily: AppString.font_family_jalnan,
                       foreground: Paint()
                         ..style = PaintingStyle.stroke
-                        ..strokeWidth = 6.w
+                        ..strokeWidth = 8.w
                         ..color = AppColors.black,
                     ),
                   ),
@@ -43,7 +44,8 @@ class LandingTitle extends StatelessWidget {
                     AppString.app_title,
                     style: TextStyle(
                       fontSize: 80.sp,
-                      fontFamily: 'JALNAN',
+                      letterSpacing: 5.w,
+                      fontFamily: AppString.font_family_jalnan,
                       color: AppColors.white,
                     ),
                   ),

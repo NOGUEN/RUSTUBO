@@ -16,4 +16,5 @@ abstract class AppString {
   static const img_landing_background_4 = 'images/landing_background4.png';
 
   static const font_family_jalnan = 'JALNAN';
+  static const font_family_pretendard = 'Pretendard';
 }

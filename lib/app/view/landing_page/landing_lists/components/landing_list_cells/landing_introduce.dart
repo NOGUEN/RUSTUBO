@@ -79,6 +79,7 @@ class IntroduceContent extends StatelessWidget {
             Text(
               'RUTSUBO+ 란?',
               style: TextStyle(
+                letterSpacing: 1.w,
                 fontFamily: AppString.font_family_jalnan,
                 fontSize: 50.sp,
               ),
@@ -87,6 +88,7 @@ class IntroduceContent extends StatelessWidget {
             Text(
               '해외 출신 만화가지망생들의 일본만화 데뷔를\n목적으로 한 만화연구회입니다! \n수년간 축적한 연구회의 노하우로 \n막막한 지망생분들께 피드백과 \n상담활동을 해드리고 있습니다!',
               style: TextStyle(
+                letterSpacing: 1.w,
                 fontSize: 26.w,
               ),
             ),

@@ -67,17 +67,19 @@ class IntroduceContent extends StatelessWidget {
           children: [
             const Spacer(),
             Text(
-              '멘토의 피드백',
+              "정보",
               style: TextStyle(
+                letterSpacing: 1.w,
                 fontFamily: AppString.font_family_jalnan,
                 fontSize: 50.sp,
               ),
             ),
             SizedBox(height: 5.w),
             Text(
-              '데즈카상을 수상하고, 소년점프에서 활동 한 경험,\n대학원에서 연구한 일본 대중만화에 대한 제작론을 통해\n만화에 대해 피드백을 진행합니다!',
+              '외국인이 쉽게 알 수 없는 정보,\n대회일정과 심사 요소 등\n외국에서 접하기 어려운 여러가지 정보가 없다면\n개척해 나갈 수 없습니다!',
               textAlign: TextAlign.end,
               style: TextStyle(
+                letterSpacing: 1.w,
                 fontSize: 26.w,
               ),
             ),
