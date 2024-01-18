@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rutsubo/app/view/landing_page/landing_lists/landing_list_cells.dart';
 import 'package:rutsubo/global_setting/app_colors.dart';
 import 'package:rutsubo/global_setting/app_string.dart';
+import 'package:rutsubo/global_setting/app_values.dart';
 
 class LandingAnswerSecond extends StatelessWidget {
   const LandingAnswerSecond({super.key});
@@ -15,15 +16,15 @@ class LandingAnswerSecond extends StatelessWidget {
           child: Row(
         children: [
           LandingMangaCell(
-            height: 360.w,
-            width: 200.w,
+            height: AppValues.landingListHeight.w,
+            width: AppValues.landingAggroWidth.w,
             color: AppColors.black,
             content: const AggroContent(),
           ),
           const Spacer(),
           LandingMangaCell(
-            height: 360.w,
-            width: 950.w,
+            height: AppValues.landingListHeight.w,
+            width: AppValues.landingListWidth.w,
             content: const IntroduceContent(),
           ),
         ],
@@ -43,7 +44,7 @@ class AggroContent extends StatelessWidget {
         style: TextStyle(
           fontFamily: AppString.font_family_jalnan,
           color: AppColors.white,
-          fontSize: 80.sp,
+          fontSize: AppValues.landingAggroFontSize.sp,
         ),
       ),
     );
@@ -67,7 +68,7 @@ class IntroduceContent extends StatelessWidget {
               style: TextStyle(
                 letterSpacing: 1.w,
                 fontFamily: AppString.font_family_jalnan,
-                fontSize: 50.sp,
+                fontSize: AppValues.landingTitleFontSize.sp,
               ),
             ),
             SizedBox(height: 5.w),
@@ -76,7 +77,7 @@ class IntroduceContent extends StatelessWidget {
               textAlign: TextAlign.end,
               style: TextStyle(
                 letterSpacing: 1.w,
-                fontSize: 26.w,
+                fontSize: AppValues.landingContentFontSize.w,
               ),
             ),
             const Spacer(),

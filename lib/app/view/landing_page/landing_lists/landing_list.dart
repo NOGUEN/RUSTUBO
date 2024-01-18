@@ -20,13 +20,19 @@ class LandingList extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         LandingTitle(),
+        SizedBox(height: 50.w),
         LandingIntroduce(controller: controller),
+        SizedBox(height: 50.w),
         LandingThreeThings(),
+        SizedBox(height: 50.w),
         LandingAnswerFirst(),
+        SizedBox(height: 50.w),
         LandingAnswerSecond(),
+        SizedBox(height: 50.w),
         LandingAnswerThird(),
+        SizedBox(height: 50.w),
         LandingCTAButton(),
-        SizedBox(height: 40.w),
+        SizedBox(height: 80.w),
       ],
     );
   }

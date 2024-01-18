@@ -22,13 +22,21 @@ abstract class AppValues {
   static const int defaultDebounceTimeInMilliSeconds = 1000;
   static const int defaultThrottleTimeInMilliSeconds = 500;
 
-  static const double webLandingListHeight = 300;
+  static const double landingListHeight = 300;
+  static const double landingListWidth = 720;
+  static const double landingAggroWidth = 140;
+
+  static const double landingTitleFontSize = 35;
+  static const double landingContentFontSize = 20;
+
+  static const double landingAggroFontSize = 60;
+
   static const double tabletLandingListHeight = 300;
   static const double mobileandingListHeight = 200;
 
   static const double webLandingFontSize = 28;
   static const double tabletLandingFontSize = 24;
-  static const double mobileLandingFontSize = 22;
+  static const double mobileLandingFontSize = 20;
 
   static const double lineHeight = 1.5;
 }

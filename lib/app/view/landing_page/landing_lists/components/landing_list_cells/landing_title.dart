@@ -19,7 +19,7 @@ class LandingTitle extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: Image.asset(
-                AppString.img_landing_background_1,
+                AppString.img_landing_title,
                 width: 1200.w,
                 height: 450.w,
                 fit: BoxFit.cover,

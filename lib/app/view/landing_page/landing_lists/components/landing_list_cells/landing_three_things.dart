@@ -15,7 +15,7 @@ class LandingThreeThings extends StatelessWidget {
         child: Column(
           children: [
             LandingMangaCell(
-              height: 120.w,
+              height: 100.w,
               width: double.infinity,
               color: AppColors.black,
               content: const Question(),
@@ -39,7 +39,7 @@ class Question extends StatelessWidget {
           letterSpacing: 5.w,
           fontFamily: AppString.font_family_jalnan,
           color: AppColors.white,
-          fontSize: 40.sp,
+          fontSize: 26.sp,
         ),
       ),
     );
